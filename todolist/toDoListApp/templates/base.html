@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'toDoListApp/css/style.css' %}">
+    <script src="{% static 'toDoListApp/js/jquery-3.4.1.min.js' %}"></script>
+</head>
+
+<body>
+
+    <header>
+        TO-DO-LIST
+    </header>
+    <div class="big-container">
+
+        {% block content %}
+
+        {% endblock content %}
+
+    </div>
+
+    <script src="{% static 'toDoListApp/js/script.js' %}"></script>
+
+</body>
+
+</html>
