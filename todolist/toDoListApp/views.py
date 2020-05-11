@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
+from django.views.generic.edit import UpdateView
 
 from .models import TaskList, DoneTasks
 
@@ -26,9 +27,11 @@ def index(request):
 
 @csrf_exempt
 def add_task(request):
-    current_date = timezone.now()
+    current_date = datetime.date.today()
     content = request.POST['content']
-    task_obj = TaskList.objects.create(task=content, pub_date=current_date)
+    priority = request.POST['priority']
+    task_obj = TaskList.objects.create(
+        task=content, pub_date=current_date, priority=priority)
     return HttpResponseRedirect('/')
 
 

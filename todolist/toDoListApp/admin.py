@@ -5,7 +5,7 @@ from .models import TaskList, DoneTasks
 
 
 class TodoAdmin(admin.ModelAdmin):
-    list_display = ('task', 'pub_date')
+    list_display = ('task', 'pub_date', 'priority')
 
 
 class DoneTaskAdmin(admin.ModelAdmin):

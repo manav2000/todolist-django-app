@@ -3,18 +3,23 @@
 {% block content %}
 <div class="container-1">
     <div class="search-box">
-        <form action="add_task/" method="post">
+        <form class='addtask' action="add_task/" method="post">
             <div id="search">
                 <input type="text" name="content" placeholder="Enter Task...">
             </div>
+            <select name="priority" id="importance">
+                <option value="0" style="background: green;">low</option>
+                <option value="1" style="background: goldenrod;">moderate</option>
+                <option value="2" style="background: red;">high</option>
+            </select>
             <div id="add-button"><button type="submit">ADD</button></div>
         </form>
     </div>
     <div class="list">
         {% for item in listItems %}
 
-        <div id="task">
-            <li>{{ item.task }}</li>
+        <div id="task" class="p{{ item.priority }}">
+            <li>{{ item.task }} (priority: {{ item.priority }})</li>
             <div id="buttons">
                 <form action="done_task/{{ item.id }}/" action="post">
                     <div id="done-button">

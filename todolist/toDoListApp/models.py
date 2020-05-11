@@ -7,6 +7,13 @@ from django.db import models
 
 class TaskList(models.Model):
     task = models.CharField(max_length=200)
+    CHOOSE_PRIORITY = (
+        ('0', 'low'),
+        ('1', 'moderate'),
+        ('2', 'high')
+    )
+    priority = models.CharField(
+        choices=CHOOSE_PRIORITY, max_length=10, null=True)
     pub_date = models.DateTimeField('date_published')
 
     def __str__(self):

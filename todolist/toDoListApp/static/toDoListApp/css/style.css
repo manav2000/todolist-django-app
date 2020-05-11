@@ -39,11 +39,18 @@ header {
 }
 
 .search-box {
-    position: relative;
-    width: 100%;
+    width: 50%;
     height: 60px;
+    margin-left: 250px;
 }
 
+.addtask {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
 
 .search-box #search {
     width: 250px;
@@ -53,9 +60,6 @@ header {
     align-content: center;
     justify-content: center;
     border-radius: 25px;
-    margin-top: 15px;
-    position: absolute;
-    margin-left: 35%;
     border: 1.5px solid black;
 }
 
@@ -65,10 +69,7 @@ header {
 }
 
 #add-button {
-    position: absolute;
     background: azure;
-    margin-left: 62%;
-    margin-top: 15px;
     height: 30px;
     width: 50px;
     display: flex;
@@ -161,4 +162,16 @@ li {
 
 .task-name {
     border-bottom: 1.5px solid black;
+}
+
+.p0 {
+    background: lightgreen !important;
+}
+
+.p1 {
+    background: orange !important;
+}
+
+.p2 {
+    background: red !important;
 }
